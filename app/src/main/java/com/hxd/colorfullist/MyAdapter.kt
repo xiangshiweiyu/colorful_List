@@ -13,25 +13,22 @@ import com.bumptech.glide.Glide
 
 /**
  * @CreateTime: 2020/8/19  15:34
- * @author:
+ * @author: hxd
  * @Content:
  * @UpdateTime:
  * @UpdateName;
  * @UpdateContent:
  */
-class MyAdapter(private var context: Context) :
-
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MyAdapter(private var context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val head: Int = 1000
     private val itemPt: Int = 1001
     private val cardView: Int = 1002
-    private val img: Int = 1003
 
     private lateinit var data: List<Bean>
 
 
-    public fun setData(data: List<Bean>) {
+    fun setData(data: List<Bean>) {
         this.data = data
     }
 
@@ -86,18 +83,18 @@ class MyAdapter(private var context: Context) :
     override fun getItemViewType(position: Int): Int = data[position].type
 
 
-    inner class HeadViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class HeadViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ibHead: ImageButton = itemView.findViewById(R.id.ib_head)
         val tvHead: TextView = itemView.findViewById(R.id.tv_username)
     }
 
-    inner class PtViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class PtViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val ivItemPt: ImageView = itemView.findViewById(R.id.iv_pt_item)
         val tvItemPt: TextView = itemView.findViewById(R.id.tv_pt_item);
     }
 
-    inner class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class CardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val ivCard1: ImageView = itemView.findViewById(R.id.iv_card_1)
         val ivCard2: ImageView = itemView.findViewById(R.id.iv_card_2)
@@ -105,7 +102,7 @@ class MyAdapter(private var context: Context) :
         val cvCard: CardView = itemView.findViewById(R.id.cv_card_view)
     }
 
-    inner class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class ImageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivItemImg: ImageView = itemView.findViewById(R.id.iv_img)
     }
 }
